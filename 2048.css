@@ -1,0 +1,22 @@
+#table {
+    border-collapse: collapse;
+    user-select:none; /* Chrome, Edge, Opera and Firefox */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+  
+#table td {
+    border: 1px solid black;
+    width : 100px;
+    height : 100px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align:center;
+}
+  
+#score {
+    font-size: 20px;
+    font-weight:bold;
+}
