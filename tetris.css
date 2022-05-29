@@ -1,0 +1,54 @@
+#tetris,
+#next-table {
+    border-collapse: collapse;
+}
+
+#next-table {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#tetris td {
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+}
+
+#next-table td {
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
+}
+
+td.white {
+    background-color: white;
+}
+
+td.red {
+    background-color: red;
+}
+
+td.orange {
+    background-color: orange;
+}
+
+td.yellow {
+    background-color: yellow;
+}
+
+td.green {
+    background-color: green;
+}
+
+td.blue {
+    background-color: blue;
+}
+
+td.navy {
+    background-color: navy;
+}
+
+td.violet {
+    background-color: violet;
+}
