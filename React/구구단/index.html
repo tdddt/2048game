@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>구구단</title>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div> <!-- <div id="root"><button>Like</button></div> -->
+        <script type="text/babel"> 
+            class GuGuDan extends React.Component{
+                constructor(props){
+                    super(props);
+                    this.state = {
+                        first : Math.ceil(Math.random()*9),
+                        second : Math.ceil(Math.random()*9),
+                        inputValue: '',
+                        result : '',
+                    };
+                }
+
+                onSubmit = (e)=>{
+                    e.preventDefault();
+                    if(parseInt(this.state.inputValue)===this.state.first * this.state.seccond){
+                        this.setState({
+                            result : '정답',
+                            first : Math.ceil(Math.random()*9),
+                            second : Math.ceil(Math.random()*9),
+                            inputValue: '',
+                        });
+                    } else {
+                        this.setState({
+                            result : '오답. 다시 풀어보세요.',
+                            inputValue: '',
+                        })
+                    }
+                }
+
+                onChange = (e)=>this.setState({inputValue : e.target.value});
+
+                render(){
+                    return ( //싱글태그에 닫는 태그 필수
+                        <div>
+                            <div>{this.state.first}곱하기{this.state.second}는?</div>
+                            <form onSubmit={this.onSubmit}>
+                                <input type="number" value={this.state.inputValue} onChange={this.onChange}/>
+                                <button>입력!</button>
+                            </form>   
+                            <div>{this.state.result}</div> 
+                        </div>
+                    );
+                }
+            }
+        </script>
+        <script> 
+            ReactDOM.render(<GuGuDan/>,document.querySelector('#root'));
+        </script>
+    </body>
+</html>
